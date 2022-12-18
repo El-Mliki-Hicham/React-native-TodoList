@@ -8,7 +8,7 @@ class Form extends React.Component{
     }
     handleChange=(text)=>{
         // const log = logger.createLogger();
-        console.log(text)
+      
         this.setState({
             task:text
         });
@@ -52,7 +52,6 @@ class Form extends React.Component{
               onPress={this.handleSubmit}
              />
              </View>
-             <Text>{this.state.task} </Text>
             </View>
         )
     }
