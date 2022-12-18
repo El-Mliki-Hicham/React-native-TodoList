@@ -3,16 +3,23 @@ import { Alert, Button, StyleSheet, Text, TextInput, View } from "react-native";
 import { logger } from "react-native-logs";
 class Form extends React.Component{
     state={
-        value:''
+        task:'',
+        id:" "
     }
     handleChange=(text)=>{
-        const log = logger.createLogger();
-        // log.info()
+        // const log = logger.createLogger();
+        console.log(text)
         this.setState({
-            value:text
+            task:text
         });
-        
     }
+    handleSubmit=()=>{
+       this.props.addData(this.state)
+       this.setState({
+        task:" "
+    })
+    }
+    
     render(){
         const styles = StyleSheet.create({
             input: {
@@ -36,15 +43,16 @@ class Form extends React.Component{
 
             <Text>Add tasks</Text>
             
-             <TextInput  onChangeText={(text)=>this.handleChange(text)} style={styles.input}></TextInput>
+             <TextInput  onChangeText={(text)=>this.handleChange(text)} value={this.state.task} style={styles.input}></TextInput>
              <View style={styles.button}>
              <Button 
-              color="red"
+              color="blue"
               title="Add"
               width="100px"
+              onPress={this.handleSubmit}
              />
              </View>
-             <Text>{this.state.value} </Text>
+             <Text>{this.state.task} </Text>
             </View>
         )
     }
