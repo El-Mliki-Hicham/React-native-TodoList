@@ -8,7 +8,7 @@ function Table (){
     }
     const handleClick=()=>{
 
-        
+        alert(ValueInput)
     }
     console.log(ValueInput)
     
@@ -20,11 +20,14 @@ function Table (){
             ></TextInput>
         </View>
         <View style={styles.DeleteBtn}>
+            <Button title="Add task" onPress={handleClick} color={'blue'}></Button>
+        </View>
+        {/* <View style={styles.DeleteBtn}>
             <Button title="delete" color={'red'}></Button>
-        </View>
-        <View style={styles.EditBtn}>
+        </View> */}
+        {/* <View style={styles.EditBtn}>
         <Button color={"green"} title="edit"></Button>
-        </View>
+        </View> */}
         </View>
     )
 }
