@@ -1,12 +1,23 @@
-import React from "react";
-import { View ,Text, StyleSheet ,Button} from "react-native";
+import React, { useState } from "react";
+import { View ,Text, StyleSheet ,Button, TextInput} from "react-native";
 
 function Table (){
+    const [ValueInput, setValueInput] = useState("");
+    const handleChange=(e)=>{
+        setValueInput(e)
+    }
+    const handleClick=()=>{
 
+        
+    }
+    console.log(ValueInput)
+    
     return(
             <View style={styles.div}>
         <View style={styles.cadre}>
-            <Text style={styles.text}>Todolist</Text>
+            <TextInput style={styles.text} 
+            onChangeText={handleChange}
+            ></TextInput>
         </View>
         <View style={styles.DeleteBtn}>
             <Button title="delete" color={'red'}></Button>
